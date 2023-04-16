@@ -14,8 +14,8 @@ public class GameManager : MonoBehaviour {
     private int playerLives = 3;
     private int score = 0;
 
-    public bool isPaused { get; private set; } = true;
-    public bool isPlaying { get; private set; } = false;
+    public bool isPaused { get; private set; } = false;
+    public bool isPlaying { get; private set; } = true;
 
     // Start is called before the first frame update
     void Start() {
