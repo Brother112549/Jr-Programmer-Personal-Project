@@ -4,7 +4,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerController : MonoBehaviour {
-
+    // ENCAPSULATION
     [SerializeField, Tooltip("Engine thrust")] private float force = 10f;
     [SerializeField, Tooltip("Engine rotation speed")] private float rotatSpeed = 50f;
     [SerializeField] private float spinTime = 1.0f;
@@ -34,18 +34,18 @@ public class PlayerController : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update() {
+    void Update() {// ABSTRACTION
         EngineControl();
 
         WeaponControl();
     }
 
     // FixedUpdate is called once per physics step
-    void FixedUpdate() {
+    void FixedUpdate() {// ABSTRACTION
         ThrustControl();
     }
 
-    void LateUpdate() {
+    void LateUpdate() {// ABSTRACTION
         SpinControl();
         //Height Control (No using ramps)
         transform.position = new Vector3(transform.position.x, 0, transform.position.z);

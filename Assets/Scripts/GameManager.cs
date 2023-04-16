@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 
 public class GameManager : MonoBehaviour {
-
+    // ENCAPSULATION
     [SerializeField] private TextMeshProUGUI livesText;
     [SerializeField] private TextMeshProUGUI scoreText;
     [SerializeField] private TextMeshProUGUI waveText;
@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour {
     private int playerLives = 3;
     private int score = 0;
 
+    // ENCAPSULATION
     public bool isPaused { get; private set; } = false;
     public bool isPlaying { get; private set; } = true;
 

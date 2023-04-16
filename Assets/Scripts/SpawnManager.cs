@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SpawnManager : MonoBehaviour {
-
+    // ENCAPSULATION
     [SerializeField] private GameObject enemyPrefab;
     [SerializeField] private GameObject obstaclePrefab;
     [SerializeField] private GameObject pickupPrefab;

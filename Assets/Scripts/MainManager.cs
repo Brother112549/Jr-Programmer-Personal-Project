@@ -4,10 +4,10 @@ using System.IO;
 using UnityEngine;
 
 public class MainManager : MonoBehaviour {
-    
+    // ENCAPSULATION
     public static MainManager Instance { get; private set; }
-    public string highScoreName;
-    public int highScore;
+    public string highScoreName { get; private set; }
+    public int highScore { get; private set; }
 
     private void Awake() {
         if (Instance != null) {

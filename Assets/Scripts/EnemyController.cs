@@ -4,7 +4,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
 public class EnemyController : MonoBehaviour {
-
+    // ENCAPSULATION
     [SerializeField, Tooltip("Speed at which enemy revolves")] private float angleSpeed = 50f;
     [SerializeField, Tooltip("Speed at which enemy climbs/descends spiral")] private float radialSpeed = 0.5f;
     [SerializeField, Range(0f, 7f), Tooltip("Radius where spiral becomes circular orbit")] private float radius = 3f;
@@ -24,7 +24,7 @@ public class EnemyController : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update() {
+    void Update() {// ABSTRACTION
         //look toward player
         LookAtPlayer();
 

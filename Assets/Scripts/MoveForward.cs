@@ -4,7 +4,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
 public class MoveForward : MonoBehaviour {
-
+    // ENCAPSULATION
     [SerializeField] protected float speed = 10.0f;
 
     private int xBound = 20;

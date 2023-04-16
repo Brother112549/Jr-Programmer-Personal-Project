@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Revolve : MoveForward {
-
+public class Revolve : MoveForward {// INHERITANCE
+    // ENCAPSULATION
     [SerializeField] private float spinRateRange = 10;
     [SerializeField, Tooltip("Set to random value between positive and negative Spin Rate Range in Start method")] private float spinRate;
 
@@ -12,7 +12,7 @@ public class Revolve : MoveForward {
         spinRate = Random.Range(-spinRateRange, spinRateRange);
     }
 
-    protected override void Move() {
+    protected override void Move() { // POLYMORPHISM
         //turn
         transform.Rotate(Vector3.up, spinRate * Time.deltaTime, Space.World);
 
