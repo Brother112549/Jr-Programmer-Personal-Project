@@ -14,6 +14,7 @@ public class SpawnManager : MonoBehaviour {
         private set { m_waveNumber = value; }
     }
 
+    private GameManager gameManager;
     private float spawnRangeX = 16;
     private float spawnRangeZ = 8;
     private float spawnOnX = 19;
@@ -23,6 +24,7 @@ public class SpawnManager : MonoBehaviour {
 
     // Start is called before the first frame update
     void Start() {
+        gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
         SpawnEnemyWave(waveNumber);
         StartCoroutine(SpawnObstacles());
     }
@@ -80,6 +82,8 @@ public class SpawnManager : MonoBehaviour {
     private void SpawnEnemyWave(int enemiesToSpawn) {
         //spawn new pickup
         Instantiate(pickupPrefab, GenerateSpawnPosition(), pickupPrefab.transform.rotation);
+        //use game manager to update ui
+        gameManager.UpdateWave(waveNumber);
         Debug.Log("Call Spawn Enemies");
         isSpawningEnemies = true;
         StartCoroutine(SpawnEnemiesWithDelay(enemiesToSpawn));

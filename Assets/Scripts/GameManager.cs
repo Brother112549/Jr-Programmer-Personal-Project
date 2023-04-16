@@ -42,6 +42,10 @@ public class GameManager : MonoBehaviour {
         scoreText.text = "Score: " + score;
     }
 
+    public void UpdateWave(int wave) {
+        waveText.text = "Wave: " + wave;
+    }
+
     public void TogglePause() {
         if(!isPaused) {
             Time.timeScale = 0;
