@@ -79,7 +79,7 @@ public class PlayerController : MonoBehaviour {
         }
     }
 
-    void EngineControl() {
+    private void EngineControl() {
         //rotate engine, force from engine direction for thrust
         if (Input.GetKey(KeyCode.LeftArrow)) {
             //Left arrow = CCW rotation of engine
@@ -91,7 +91,7 @@ public class PlayerController : MonoBehaviour {
         }
     }
 
-    void ThrustControl() {
+    private void ThrustControl() {
         if (Input.GetKey(KeyCode.UpArrow)) {
             //Up arrow for thrust
             //Get thrust direction from engine rotation
@@ -102,7 +102,7 @@ public class PlayerController : MonoBehaviour {
         }
     }
 
-    void WeaponControl() {
+    private void WeaponControl() {
         //rotate weapon using mouse position on screne
         //get mouse position
         Vector3 lookAtPos = Input.mousePosition;
@@ -145,7 +145,7 @@ public class PlayerController : MonoBehaviour {
     }
 
     //control player spin based on recent collision
-    void SpinControl() {
+    private void SpinControl() {
         if (!isSpinning && !isRecovering) {
             //fix rotation such that up is always up for normal gameplay
             transform.eulerAngles = Vector3.zero;

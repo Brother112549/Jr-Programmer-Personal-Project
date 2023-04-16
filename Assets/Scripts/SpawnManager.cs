@@ -93,6 +93,10 @@ public class SpawnManager : MonoBehaviour {
         Debug.Log("Spawn Enemies");
         Vector3 enemyPos = GenerateEdgeSpawnPosition();
         for (int i = 0; i < enemiesToSpawn; i++) {
+            while (gameManager.isPaused) {
+                //pause spawns while paused
+                yield return null;
+            }
             Instantiate(enemyPrefab, enemyPos, enemyPrefab.transform.rotation);
             yield return new WaitForSeconds(1);
         }
@@ -100,7 +104,12 @@ public class SpawnManager : MonoBehaviour {
     }
 
     IEnumerator SpawnObstacles() {
-        while (true) {
+        while (gameManager.isPlaying) {
+            while(gameManager.isPaused) {
+                //pause spawns while paused
+                yield return null;
+            }
+
             float delay = Random.Range(1, 5);
             Vector3 obSpawnPos = GenerateEdgeSpawnPosition();
             Vector3 obSpawnRot = obstaclePrefab.transform.rotation.eulerAngles;
